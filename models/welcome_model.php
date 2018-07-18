@@ -11,7 +11,7 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-        return 'hello from  <b>'.__FILE__;
+        $welView =  'hello from  <b>'.__FILE__;
         ?>
     </body>
 </html>
