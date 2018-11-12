@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Документ без названия</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+<link href="css.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<script>
+		window.AddEventListener("load",init, false) ;
+		
+		function init(e) {
+document.getElementById("myButton").addEventListener("click",documentLoader, false) ;
+		}
+
+		function reqListener() {
+			console.log(this.responseText) ;
+		document.getElementByld("content").innerHTML = this.responseText;
+		}
+
+		function documentLoader(){
+			var oReq = new XMLHttpRequest();
+			oReq.open( "get" , "loadme.txt" , true ) ;
+			//oReq.onload = reqListener();
+			oReq.onload = function(){
+				console.log("hello");
+			}
+			
+			oReq.send();
+		}
+	</script>
+<p class="pp"><a href="index.html">Hello, world!!!</a></p>
+<form id= "myForm ">
+  <button id="myButton" type="button">3aгpyзить</button>
+</form >
+<div id="content"></div>
+</body>
+</html>

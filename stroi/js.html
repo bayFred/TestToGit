@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <a id="mylink" href="http://google.com.ua">Щелкни</a><br>
+        <script type="text/javascript">
+            function $(id) {
+                return document.getElementById(id)
+            }
+
+            url = $('mylink').href
+            if (url) {
+                document.write('URL-адрес — ' + url);
+                console.log("yessss");
+            }
+            document.write("<br>==============================<br>")
+            onerror = errorHandler
+            document.write("Добро пожаловать на этот сайт!") // Преднамеренная ошибка
+            function errorHandler(message, url, line)
+            {
+                out = "К сожалению, обнаружена ошибка.\n\n";
+                out += "Ошибка: " + message + "\n";
+                out += "URL: " + url + "\n";
+                out += "Строка: " + line + "\n\n";
+                out += "Щелкните на кнопке OK для продолжения работы.\n\n";
+                alert(out);
+                return true;
+            }
+            document.write("<br>==============================<br>")
+
+            function User(name, surname, pass) {
+                this.name = name;
+                this.surname = surname;
+                this.pass = pass;
+
+            }
+
+            User.prototype.myF = function () {
+                document.write("Name:" + this.name + "<br>")
+                document.write("Surname:" + this.surname + "<br>")
+                document.write("Pass:" + this.pass + "<br>")
+            }
+            res1 = new User("John", "Snow", "Secret");
+
+            res1.myF();
+
+            //function Chess() {
+            checkerboard = Array(
+                    Array('л ', 'к ', 'с ', 'к ', 'ф ', 'с ', 'к ', 'ф '),
+                    Array('п ', 'п ', 'п ', 'п ', 'п ', 'п ', 'п ', 'п '),
+                    Array('_ ', '_ ', '_ ', '_ ', '_ ', '_ ', '_ ', '_ '),
+                    Array('_ ', '_ ', '_ ', '_ ', '_ ', '_ ', '_ ', '_ '),
+                    Array('_ ', '_ ', '_ ', '_ ', '_ ', '_ ', '_ ', '_ '),
+                    Array('_ ', '_ ', '_ ', '_ ', '_ ', '_ ', '_ ', '_ '),
+                    Array('П ', 'П ', 'П ', 'П ', 'П ', 'П ', 'П ', 'П '),
+                    Array('Л ', 'К ', 'С ', 'К ', 'Ф ', 'С ', 'К ', 'Л '),
+                    )
+            // Chess.prototype.show = function () {
+            document.write("<pre>")
+            for (j = 0; j < 8; ++j)
+            {
+                for (k = 0; k < 8; ++k)
+                    document.write(checkerboard[j][k] + " ")
+                document.write("<br>")
+            }
+            document.write("</pre>")
+            // }
+            // }
+//            game = new Chess();
+//            game.show();
+            document.write(checkerboard[0][2]);
+            checkerboard[6][4] = '_ ';
+            checkerboard[4][4] = 'П ';
+
+            document.write("<pre>")
+            for (j = 0; j < 8; ++j)
+            {
+                for (k = 0; k < 8; ++k)
+                    document.write(checkerboard[j][k] + " ")
+                document.write("<br>")
+            }
+            document.write("</pre>")
+//            game.checkerboard[4][4] = 'П ';
+//            game.show();
+
+            document.write("<br>==============================<br>")
+            document.write("<br>==============================<br>")
+            pets = ["Кошка", "Собака", "Кролик", "Хомяк"]
+            pets.forEach(output)
+            
+            
+            function output(element, index, array)
+            {
+                document.write("Элемент с индексом " + index + " содержит значение " +
+                        element + "<br>")
+            }
+            document.write("<br>==============================<br>")
+
+
+
+sports = ["Футбол", "Теннис", "Бейсбол"]
+document.write("Изначально = " + sports + "<br>")
+
+sports.push("Hockey")
+document.write("После вставки = " + sports + "<br>")
+
+removed = sports.pop()
+document.write("После удаления = " + sports + "<br>")
+document.write("Удаленный элемент = " + removed + "<br>")
+
+
+
+
+
+
+
+
+
+            /*
+             words = fixNames("the", "DALLAS", "CowBoys")
+             for (j = 0 ; j < words.length ; ++j)
+             document.write(words[j] + "<br>")
+             function fixNames()
+             {
+             var s = new Array()
+             for (j = 0 ; j < fixNames.arguments.length ; ++j)
+             s[j] = fixNames.arguments[j].charAt(0).toUpperCase() + fixNames.arguments[j].substr(1).toLowerCase()
+             return s
+             }*/
+        </script>
+    </body>
+</html>

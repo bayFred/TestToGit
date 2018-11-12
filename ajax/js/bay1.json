@@ -1,0 +1,22 @@
+[
+	{
+		"name" : "Fred",
+		"age" : 35,
+		"city" : "Boston"
+	},
+	{
+		"name" : "John",
+		"age" : 41,
+		"city" : "Soilt Like City"
+	},
+	{
+		"name" : "Bob",
+		"age" : 35,
+		"city" : "Los Angeles"
+	},
+	{
+		"name" : "Jesica",
+		"age" : 28,
+		"city" : "New York"
+	}
+]

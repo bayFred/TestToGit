@@ -1,3 +1,4 @@
+<?php require 'functions.php'; ?>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -11,7 +12,8 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-        $welView =  'hello from  <b>'.__FILE__;
+        //$f = new BayFunctions();
+        $welView =  'hello from  <b>'.cutFunctionName(__FILE__);
         ?>
     </body>
 </html>

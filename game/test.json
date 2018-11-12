@@ -1,0 +1,27 @@
+// JSON Document
+[
+	{
+		"name": "Meoway",
+		"species": "cat",
+		"foods":{
+			"likes":["tuna","catnip"],
+			"dislikes":["ham", "zucchini"]
+		}
+	},
+	{
+		"name": "Bob",
+		"species": "dog",
+		"foods":{
+			"likes":["rise","meat"],
+			"dislikes":["grow", "wood"]
+		}
+	},
+	{
+		"name": "Fred",
+		"species": "pinguin",
+		"foods":{
+			"likes":["fish","meat"],
+			"dislikes":["water", "soilt"]
+		}
+	}
+]

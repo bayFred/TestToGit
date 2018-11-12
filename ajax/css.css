@@ -1,0 +1,10 @@
+@charset "utf-8";
+body {
+	float: left;
+	border-collapse: separate;
+	/*-webkit-box-shadow: 10px 0px;*/
+	/*box-shadow: 10px 0px;*/
+	font-family: arial;
+	text-align: center;
+	text-transform: capitalize;
+}
