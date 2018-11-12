@@ -11,6 +11,7 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
             <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
         </div>
+		<section class="cls"></section>
         <div class="col-sm-10">
 
 
@@ -56,10 +57,10 @@
 				
           <div class="text-center">  <button class="btn-lg text-center"  type="submit"  name="submit" value="yes">ПРИКИНУТЬ ИНСТРУМЕНТ</button></div>
             </form>
-            <!--<a href="choose.php">ПРИКИНУТЬ ИНСТРУМЕНТ</a>-->
+            
         </div>
     </div>
 </div>
-<h2>HELLO</h2>
+
 </body>
 </html>
