@@ -23,4 +23,18 @@
         </style>
     </head>
     <body>
+		<div class="jumbotron text-center">
+    <h1>Кабинет мастера</h1>
+    <p>Все, что нужно профессионалу</p> 
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-2" style="background-color: grey;">
+            
+			<h4>Column 1</h4>
+            
+        </div>
+		<section class="cls"></section>
+        <div class="col-sm-10">
 

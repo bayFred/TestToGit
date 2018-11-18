@@ -2,7 +2,7 @@
 error_reporting(E_ALL);
 
 $hn = 'localhost';
-$db = 'stroi3';
+$db = 'stroi4';
 $un = 'root';
 $pw = '';
 
@@ -18,4 +18,11 @@ function getTools($param) {
     $query .= "AND    jobs.job_name_eng = '$param' ";
 
     return $query;
+}
+
+function getAll(){
+	$query = "SELECT * FROM jobs";
+		$result = $conn->query($query);
+		if (!$result)
+			die("Сбой при доступе к базе данных: " . $conn->error);
 }

@@ -1,90 +1,72 @@
-<?php require 'layers/header.php'; ?>
-<div class="jumbotron text-center">
-    <h1>Кабинет мастера</h1>
-    <p>Все, что нужно профессионалу</p> 
-</div>
-
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-sm-2" style="background-color: grey;">
-            
-			<h4>Column 1</h4>
-            
-        </div>
-		<section class="cls"></section>
-        <div class="col-sm-10">
-
-
+<?php require 'layers/header.php'; 
+		require 'db2.php'; 
 			
-<?php
-		$query = "SELECT * FROM jobs";
-		$result = $conn->query($query);
-		if (!$result)
-			die("Сбой при доступе к базе данных: " . $conn->error);
-			$p = 0;
-?>
+$db = new DB();
+echo $db->create_DB();
+$db->getAll();
+			
+
             
 			
-<div class="container">
-	<?php if(!$_GET){?>
-	<form action="index2.php" method="get">           
-		<table class="table table-striped">
-
-
-
-<?php
+echo"<div class='container'>";
+	
+		if(!isset($_GET['submit'])){
+echo"	<form action='index2.php' method='get'>           
+		<table class='table table-striped'>";
 			
-		while ($row = mysqli_fetch_array($result)) {
-				
-			echo"<tr>                                      
-			<td>$row[job_name]</td>
-			<td><input type='checkbox' name='$row[job_name_eng]' value='$row[job_name]'></td>
-			</tr>";
-		}
-?>
+while ($row = mysqli_fetch_array($db->result)) {
 
-		</table>
+	echo"<tr>                                      
+	<td>$row[job_name]</td>
+	<td><input type='checkbox' name='$row[job_name_eng]' value='$row[job_name]'></td>
+	</tr>";
+}
+
+echo <<<END_TABLE1
+		
+</table>
 		
 		
 </div>
 
 				
-<div class="text-center">  <button class="btn-lg text-center"  type="submit"  name="submit" value="yes">ПРИКИНУТЬ ИНСТРУМЕНТ</button></div>
+
+	
+	<div class="text-center">  
+		<button class="btn-lg text-center"  type="submit"  name="submit" value="yes">Рассчет инструмента</button>
+	</div>
             
 	</form>
             
-        </div>
-    </div>
+</div>
+</div>
+END_TABLE1;
+ } 
 
-<?php } ?>
-
-<?php
-  //$_GET['submit'] = null;
+  
     $arr = [];
-if($_GET){?>
+if(isset($_GET['submit'])){
 
-
-<?php
     echo("<h3>Нам потребуется:</h3>");
     foreach ($_GET as $key => $value) {    
 
-    $query = getTools("$key");
+    $query = $db->getTools("$key");
     
-    $result = $conn->query($query);
+    $result = $db->conn->query($query);
 
-    while ($row = mysqli_fetch_array($result)) {
+while ($row = mysqli_fetch_array($result)) {
 
-        $arr[] = $row['tool_name'];
+	$arr[] = $row['tool_name'];
 
-    }
-    }
+}
+}
 
    // else die("Не нажата кнопка отправить");
 
-?>
-        <table class="table table-striped">
 
-<?php
+       echo"<table class='table table-striped'>";
+
+
 $res = array_unique($arr);
     for($i = 0; $i < count($res); $i++){
         //echo $res[$i];
@@ -95,16 +77,17 @@ echo <<<TABLE
 TABLE;
         echo "<br>";
 	}
-	?>
+	
+echo <<<END_TABLE2
 	</table>
-	<div class="text-center">  <a href="index2.php" class="btn-lg btn btn-danger text-center"  type="submit"  name="submit" value="yes">OK</a></div>		
+	<div class="text-center">  <a href="index2.php" class="btn-lg btn btn-danger text-center"  type="submit"  name="submit" value="yes">OK</a></div>
+END_TABLE2;
 			
-<?php		
+		
     }
     
+
+			
+echo"</div></body></html>";
+
 ?>
-			
-</div>
-			
-</body>
-</html>
