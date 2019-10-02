@@ -62,10 +62,10 @@ public function create_DB(){
 	$sql = $this->conn->query($query);
 		if(!$sql) die("Такая база существует");
 	
-	$sql = file_get_contents("mystroi.sql");
+	$sql = file_get_contents("../folder/mystroi.sql");
  
 // Делим инструкции
-$sql = preg_split('/;(?:\s)?$', $sql);
+$sql = preg_split('/;(?:\s)?$/', $sql);
  
 // Ну и поехали
 foreach($sql as $query) {
